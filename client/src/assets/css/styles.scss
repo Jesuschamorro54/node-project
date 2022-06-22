@@ -1,0 +1,106 @@
+@font-face {
+    font-family: "Yanone";
+    src: url("../fonts/YanoneKaffeesatz-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Finger";
+    src: url("../fonts/FingerPaint-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Titillium";
+    src: url("../fonts/TitilliumWeb-Regular.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Yanone", Helvetica;
+    font-size: 20px;
+    background: rgb(226, 226, 226);
+    background-attachment: fixed;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+header {
+    width: 100%;
+    height: 89px;
+    background: rgba(53,103,164, 0.8);
+    position: fixed;
+    display: block;
+    text-transform: uppercase;
+
+    ul {
+        display: block;
+        width: 40%;
+        height: inherit;
+        margin: 0px auto;
+        margin-top: -6px;
+
+        li {
+            display: inline-block;
+            margin: 0px auto;
+            text-align: center;
+            line-height: 88px;
+    
+            a {
+                display: block;
+                padding-right: 20px;
+                padding-left: 20px;
+                height: inherit;
+                text-decoration: none;
+                color: white;
+                transition: all 300ms;
+            }
+
+            a:hover, .actived{
+                background: rgb(0,0,0, 0.8);
+            }
+
+            &.logo a:hover {
+                background: transparent;
+            }
+        }
+    }
+    
+}
+
+.logo {
+    font-family: "Finger";
+    font-size: 30px;
+
+    a {
+        transition: color 500ms, transform 500ms;
+        &:hover { 
+            color: black;
+            transform: scale(1.50, 1.50);
+        }
+    }
+}
+
+
+.content {
+    width: 80%;
+    min-height: 500px;
+    margin: 0px auto;
+    box-shadow: 0px 0px 10px black;
+    border-left: 1px solid #b7b7b7;
+    border-right: 1px solid #b7b7b7;
+    background: rgba(255,255,255, 0.7);
+    padding-top: 120px;
+}
+
+footer {
+    width: 75%;
+    margin: 0px auto;
+    padding-top: 15px;
+    color: rgba(0,0,0, 0.5);
+}
