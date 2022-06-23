@@ -32,15 +32,15 @@ var controller = {
             project.image = null
             
             project.save((err, projectStored) =>{
-                if(err) return res.status(500).send({message: "Error al guardar"});
+                if(err) return res.status(500).send({message: "Error al guardar", status: false});
 
-                if(!projectStored) res.status(400).send({message: "No se ha podido guardar el proyecto"});
+                if(!projectStored) res.status(400).send({message: "No se ha podido guardar el proyecto", status: false});
 
-                return res.status(200).send({project: projectStored})
+                return res.status(200).send({data: projectStored, status: true})
             });
         } catch (error) {
             console.log(error)
-            return res.status(500).send({message: "Internal server error"})
+            return res.status(500).send({message: "Internal server error", status: false})
         }
         
     },

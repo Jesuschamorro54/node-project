@@ -7,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  public title: String;
+  public subtitle: String;
+  public web: String;
+
+
+  constructor() { 
+    this.title = "Jesus chamorro"
+    this.subtitle = "Desarrollador Web"
+    this.web = "jesusfeli54@gmail.com"
+  }
 
   ngOnInit(): void {
   }
