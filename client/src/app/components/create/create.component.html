@@ -23,7 +23,7 @@
         </span>
 
         <span>
-            <input #image name="image" type="file" placeholder="Subir imagen"/>
+            <input #image name="image" type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)"  />
         </span>
 
         <input class="btn" type="submit" value="Enviar" [disabled]="!projectForm.form.valid" />

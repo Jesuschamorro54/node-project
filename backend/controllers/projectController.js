@@ -1,6 +1,8 @@
 'use strict'
 
 var Project = require('../models/project');
+var fs = require('fs');
+var path = require ('path');
 
 var controller = {
     home: function(req, res){
@@ -65,12 +67,12 @@ var controller = {
 
         var update = req.body;
 
-        Project.find({}).exec((err, projectUpdated)=>{
-            if(err) return res.status(500).send({message: "Error al encontrar los datos"});
+        Project.find({}).exec((err, project)=>{
+            if(err) return res.status(500).send({message: "Error al encontrar los datos", status: false});
 
-            if(!projectUpdated) return res.status(400).send({message: "No se ha podido encontrar los proyecto"});
+            if(!project) return res.status(400).send({message: "El proyecto no existe", status: false});
 
-            return res.status(200).send({project: projectUpdated})
+            return res.status(200).send({data: project, status: true})
         });
     },
 
@@ -119,6 +121,8 @@ var controller = {
         console.log("Subiendo imagen")
         var id = req.params.id;
 
+        if(!id) return res.status(500).send({message: "El id no corresponde a ningún registro"});
+
         var fileName = 'null'
 
         if(req.files){
@@ -141,6 +145,17 @@ var controller = {
             return res.status(500).send({message: "No se ha subido la imagen"})
         }
     },
+
+    getImage: (req, res) => {
+        var file = req.params.name;
+        var path_file = './uploads/' + file
+
+        if(fs.existsSync(path_file)) {
+            return res.sendFile(path.resolve(path_file))
+        }else{
+            return res.status(404).send({message: "No existe la imagen"})
+        }
+    }
 }
 
 module.exports = controller

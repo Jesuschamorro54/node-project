@@ -9,8 +9,9 @@ const router = express.Router();
 
 
 router.get('/', ProjectController.home)
-router.get('/project/:id?', ProjectController.getProject)
 router.get('/projects', ProjectController.getProjects)
+router.get('/project/:id?', ProjectController.getProject)
+router.get('/image/:name?', ProjectController.getImage)
 
 
 
