@@ -52,6 +52,15 @@ export class AppService {
     );
   }
 
+  prueba(): Observable<any> {
+    return this._http.get('https://hjbcw66tkj.execute-api.us-east-1.amazonaws.com/dev/', this.getHeaders()).pipe(
+      
+      map((response:any) =>{
+        console.log("Response", response)
+      })
+    );
+  }
+
 
   makeFileRequest(id: number, params: string, files: Array<File>, name: string) {
     return new Promise ((resolve, reject) =>{

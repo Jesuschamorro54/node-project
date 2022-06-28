@@ -20,6 +20,7 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProjects()
+    this.getlambda();
   }
 
   getProjects() {
@@ -27,6 +28,10 @@ export class ProjectsComponent implements OnInit {
       console.log(data.print);
       this.projects = data.print;
     })
+  }
+
+  getlambda() {
+    this._appService.prueba().subscribe()
   }
 
 }
