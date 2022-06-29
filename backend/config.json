@@ -1,5 +1,0 @@
-{
-    "usersAccessDB": {
-        "uri": "mongodb+srv://xxxx:xxxxx@cluster0.xxxxx.mongodb.net/portafolio?retryWrites=true&w=majority"
-    }
-}
