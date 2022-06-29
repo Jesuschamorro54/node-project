@@ -4,3 +4,4 @@ node_modules
 
 #Ignore uploads files
 backend/uploads/
+backend/config.json
