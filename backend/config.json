@@ -1,5 +1,5 @@
 {
     "usersAccessDB": {
-        "uri": "mongodb+srv://client:4fmCDFwEIAgxx9v6@cluster0.xueqapl.mongodb.net/portafolio?retryWrites=true&w=majority"
+        "uri": "mongodb+srv://xxxx:xxxxx@cluster0.xxxxx.mongodb.net/portafolio?retryWrites=true&w=majority"
     }
 }
